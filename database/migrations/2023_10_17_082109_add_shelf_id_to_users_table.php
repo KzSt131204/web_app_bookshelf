@@ -14,9 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email', 191)->uniqe();
-            $table->string('password');
-            $table->string('name');
+            
+        $table->foreignId('shelf_id')->constrained(); 
         });
     }
 
@@ -28,7 +27,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            
         });
     }
 };
