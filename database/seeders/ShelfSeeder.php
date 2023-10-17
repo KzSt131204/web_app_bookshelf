@@ -7,20 +7,17 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 
+
 class ShelfSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    
     public function run()
     {
          DB::table('shelves')->insert([
-                'name' => '本棚a',
+                'name' => 'テスト',
+                'user_id' => '2',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                
         ]);
     }
 }

@@ -12,6 +12,15 @@ class shelf extends Model
 {
     return $this->belongsTo(User::class);
 }
+
+protected $fillable = [
+    'name',
+];
+    
+   public function getPaginateByLimit(int $limit_count = 5)
+{
+    return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+}
     
     public function books()
     {
