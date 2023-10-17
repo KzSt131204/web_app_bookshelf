@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shelves', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 50);
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        Schema::create('shelf_book', function (Blueprint $table) {
+        
+        $table->foreignId('shelf_id')->constrained('shelves');   
+        $table->foreignId('book_id')->constrained('shelves');    
+        $table->primary(['shelf_id', 'book_id']);  
+    });
     }
 
     /**
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shelves');
+        //
     }
 };
