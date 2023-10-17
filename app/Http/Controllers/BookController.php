@@ -9,7 +9,7 @@ class BookController extends Controller
 {
      public function index()
     {
-        return view('books.index')->with(['books' => $book->get()
+        return view('shelves.book')->with(['books' => $book->get()
         ]); 
         
     }
