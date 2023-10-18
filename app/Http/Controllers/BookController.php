@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-     public function index()
+     public function book(Book $book)
     {
         return view('shelves.book')->with(['books' => $book->get()
         ]); 

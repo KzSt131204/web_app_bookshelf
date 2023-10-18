@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shelf_book', function (Blueprint $table) {
+        Schema::create('book_shelf', function (Blueprint $table) {
         
-        $table->foreignId('shelf_id')->constrained('shelves');   
-        $table->foreignId('book_id')->constrained('shelves');    
-        $table->primary(['shelf_id', 'book_id']);  
+        $table->foreignId('book_id')->constrained('books');   
+        $table->foreignId('shelf_id')->constrained('shelves');    
+        $table->primary(['book_id', 'shelf_id']);  
     });
     }
 

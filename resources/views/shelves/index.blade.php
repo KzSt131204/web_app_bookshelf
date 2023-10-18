@@ -5,7 +5,9 @@
         <div class='shelves'>
             @foreach ($shelves as $shelf)
                 <div class='shelf'>
-                    <h2 class=name>{{ $shelf->name }}</h2>
+                    <h2 class=name>
+                        <a href="/shelves/{{ $shelf->id}}">{{ $shelf->name }}</a>
+                        </h2>
                 </div>
             @endforeach
         </div>
