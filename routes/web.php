@@ -24,6 +24,7 @@ Route::controller(ShelfController::class)->middleware(['auth'])->group(function(
 
 Route::controller(BookController::class)->middleware(['auth'])->group(function(){
     Route::get('/book', 'book')->name('book');
+    Route::get('/books/{book}', 'detail')->name('detail');
 
 });
 Route::middleware('auth')->group(function () {
