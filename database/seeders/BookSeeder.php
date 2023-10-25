@@ -17,9 +17,9 @@ class BookSeeder extends Seeder
     public function run()
     {
           DB::table('books')->insert([
-                'title' => 'テスト',
-                'auther' => 'test',
-                'publisher' => 'test1',
+                'title' => 'タイトルA',
+                'auther' => 'test1',
+                'publisher' => 'testa',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 
@@ -27,24 +27,24 @@ class BookSeeder extends Seeder
         ]);
         
          DB::table('books')->insert([
-                'title' => 'テスト2',
-                'auther' => 'testb',
-                'publisher' => 'test2',
+                'title' => 'タイトルB',
+                'auther' => 'test2',
+                'publisher' => 'testb',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 ]);
                 
         DB::table('books')->insert([
-                'title' => 'テスト3',
-                'auther' => 'testc',
-                'publisher' => 'test3',
+                'title' => 'タイトルC',
+                'auther' => 'test3',
+                'publisher' => 'testc',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ]);
              DB::table('books')->insert([
-                'title' => 'テスト4',
-                'auther' => 'testd',
-                'publisher' => 'test4',
+                'title' => 'テストD',
+                'auther' => 'test4',
+                'publisher' => 'testd',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 ]);
