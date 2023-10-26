@@ -24,9 +24,13 @@ Route::controller(ShelfController::class)->middleware(['auth'])->group(function(
 
 Route::controller(BookController::class)->middleware(['auth'])->group(function(){
     Route::get('/book', 'book')->name('book');
-    Route::get('/books/{book}', 'detail')->name('detail');
+    Route::post('/books/{book}', 'uproad')->name('uproad');
+    Route::get('/books/{book}/detail', 'detail')->name('detail');
+    Route::get('/books/register/{book}', 'register')->name('register');
+    
 
 });
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

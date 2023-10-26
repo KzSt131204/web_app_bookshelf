@@ -15,6 +15,7 @@ class shelf extends Model
 
 protected $fillable = [
     'name',
+    
 ];
     
    public function getPaginateByLimit(int $limit_count = 5)
