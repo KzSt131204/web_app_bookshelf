@@ -27,7 +27,9 @@ class ShelfController extends Controller
     public function store(Request $request, Shelf $shelf)
 {
     $input = $request['shelf'];
-    $shelf->fill($input)->save();
+    $shelf->fill($input);
+    $shelf->user_id = auth()->id();
+    $shelf->save();
     return redirect('/shelves/' . $shelf->id);
 }
 
