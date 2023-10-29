@@ -6,7 +6,7 @@
             <h2>Shelf Name</h2>
             <input type="text" name="shelf[name]" placeholder="本棚の名前"/>
         </div>
-            <input type="submit" value="store"/>
+            <input type="submit" value="保存"/>
     </form>
  <div class="footer">
             <a href="/">戻る</a>
