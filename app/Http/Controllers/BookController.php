@@ -10,11 +10,25 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-     public function book(Book $book)
+     public function book(Book $book, Request $request)
     {
-        return view('shelves.book')->with(['books' => $book->getPaginateByLimit()
-        ]); 
+      
+        
+                $keyword = $request->input('keyword');
+
+        $query = Book::query();
+
+        if(!empty($keyword)) {
+            $query->where('title', 'LIKE', "%{$keyword}%")
+                ->orWhere('author', 'LIKE', "%{$keyword}%")
+                ->orWhere('publisher', 'LIKE', "%{$keyword}%");
+        }        
+          $books = $query->get();
+          
+          return view('shelves.book', compact('books', 'keyword')); 
+        
     }        
+    
      public function detail(Book $book)
     {
             return view('shelves.detail')->with(['book' => $book]);
