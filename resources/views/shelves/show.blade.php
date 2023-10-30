@@ -1,16 +1,28 @@
 @extends('layouts.default')
 @section('content')
+
 <div class='books'>
- @foreach($shelf->books as $book)
-  <h3 class='title'>{{ $book->title}}</h3>
-  
-  <h5 class='auther'> {{ $book->auther}} </h5>
-   
-   <h5 class='publisher'>{{ $book->publisher}} </h5>
-  
- @endforeach
  
+  <table>
+    <tr>
+      <th>タイトル</th> <th>著者</th> <th>出版社</th>
+    </tr>
+  
+  @forelse($shelf->books as $book)
+ 
+    <tr>
+      <th>{{ $book->title }}</th> <th>{{ $book->author }}</th> <th>{{ $book->publisher}}</th>
+    </tr>
+  
+ @empty
+ <td> No Data </td>
+ 
+ @endforelse
+ 
+  </table>
+  
 </div>
+
  <div class="footer">
             <a href="/">戻る</a>
         </div>

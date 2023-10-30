@@ -18,7 +18,8 @@ class ShelfController extends Controller
 {
     return view('shelves.show')->with(['shelf' => $shelf]);
 }
-    
+
+
     public function create()
 {
     return view('shelves.create');
