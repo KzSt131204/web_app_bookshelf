@@ -40,12 +40,24 @@ class BookController extends Controller
         return view('shelves.register')->with(['book' => $book, 'shelves' => $shelves]);
     }
     
+    public function newBook(Book $book)
+    {
+        return view('shelves.newBook');
+    }
+    
+    public function add(Request $request, Book $book)
+    {
+        $input = $request['book'];
+        $book->fill($input)->save();
+        return redirect('/books');
+    }
+    
     public function uproad(Request $request, Book $book, Shelf $shelf)
 {
     
     $input_shelves = $request['shelf'];  
     $book->shelves()->attach($input_shelves); 
-    return redirect('/book');
+    return redirect('/books');
 }
 
 }

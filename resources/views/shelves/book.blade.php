@@ -2,7 +2,7 @@
 @section('content')
 
 <div>
-  <form action="{{ route('shelves.book') }}" method="GET">
+  <form action="{{ route('books') }}" method="GET">
     <input type="text" name="keyword" value="{{ $keyword }}">
     <input type="submit" value="検索">
   </form>
@@ -24,8 +24,8 @@
 
 </div>
 
-<div class=add>
-    <a></a>
+<div class=newBook>
+    <a href= '/books/new'>新規作成</a>
 </div>
 
 @endsection

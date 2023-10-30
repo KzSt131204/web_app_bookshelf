@@ -12,6 +12,14 @@ class book extends Model
 {
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
 }
+
+protected $fillable = [
+    'title',
+    'author',
+    'publisher',
+    
+];
+
     public function shelves()
     {
         return $this->belongsToMany(Shelf::class);

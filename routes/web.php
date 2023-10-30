@@ -23,12 +23,12 @@ Route::controller(ShelfController::class)->middleware(['auth'])->group(function(
 });
 
 Route::controller(BookController::class)->middleware(['auth'])->group(function(){
-    Route::get('/book', 'book')->name('book');
-    Route::get('/books', 'book')->name('shelves.book');
+    Route::get('/books', 'book')->name('books');
+    Route::get('/books/new', 'newBook')->name('newBook');
+    Route::post('/books', 'add')->name('add');
     Route::post('/books/{book}', 'uproad')->name('uproad');
     Route::get('/books/{book}/detail', 'detail')->name('detail');
     Route::get('/books/register/{book}', 'register')->name('register');
-    
 
 });
 

@@ -11,6 +11,6 @@
     <a href='/books/register/{{ $book->id }}'>本棚へ追加</a>
     </div>
  <div class="footer">
-        <a href="/book">戻る</a>
+        <a href="/books">戻る</a>
     </div>
 @endsection
