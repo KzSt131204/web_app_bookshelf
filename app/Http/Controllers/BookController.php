@@ -42,13 +42,8 @@ class BookController extends Controller
     
     public function uproad(Request $request, Book $book, Shelf $shelf)
 {
-    // $input_book = $book;
+    
     $input_shelves = $request['shelf'];  
-    
-
-    // $book->fill($input_book)->save();
-    
-
     $book->shelves()->attach($input_shelves); 
     return redirect('/book');
 }
