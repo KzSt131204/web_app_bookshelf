@@ -25,7 +25,10 @@
 </div>
 
 <div class=newBook>
-    <a href= '/books/new'>新規作成</a>
+    <h2>お探しの本がない場合は
+    <a href= '/books/new'>コチラ</a>
+    から登録をお願いします
+    </h2>
 </div>
 
 @endsection

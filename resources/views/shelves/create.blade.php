@@ -4,7 +4,7 @@
         @csrf
         <div class="name">
             <h2>Shelf Name</h2>
-            <input type="text" name="shelf[name]" placeholder="本棚の名前"/>
+            <input type="text" name="shelf[name]" placeholder="本棚の名前" required />
         </div>
             <input type="submit" value="保存"/>
     </form>
