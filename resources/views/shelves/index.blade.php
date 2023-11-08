@@ -4,6 +4,7 @@
  <h1>本棚一覧</h1>
         <div class='shelves'>
             @forelse ($shelves as $shelf)
+                
                 <div class='shelf'>
                     <h2 class=name>
                         <a href="/shelves/{{ $shelf->id}}">{{ $shelf->name }}</a>

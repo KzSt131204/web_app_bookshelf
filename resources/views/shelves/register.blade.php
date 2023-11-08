@@ -6,7 +6,7 @@
     @csrf
     <div>
         <h2>
-            登録する本棚の選択
+           {{ $book->title }}を登録する本棚を選択してください
         </h2>
         <select name="shelf[shelf_id]">
         @foreach($shelves as $shelf)

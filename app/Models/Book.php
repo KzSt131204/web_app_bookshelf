@@ -19,9 +19,14 @@ protected $fillable = [
     'publisher',
     
 ];
-
+    
     public function shelves()
     {
         return $this->belongsToMany(Shelf::class);
+    }
+    
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

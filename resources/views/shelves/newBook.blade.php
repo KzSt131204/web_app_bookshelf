@@ -15,7 +15,7 @@
         <div class="publisher">
             <h2>出版社</h2>
             <input type="text" name="book[publisher]" placeholder="出版社" required />
-        </div>        
+        </div>
         
             <input type="submit" value="登録"/>
     </form>

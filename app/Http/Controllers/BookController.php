@@ -6,6 +6,8 @@ use App\Models\Book;
 
 use App\Models\Shelf;
 
+use App\Models\Tag;
+
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -40,12 +42,12 @@ class BookController extends Controller
         return view('shelves.register')->with(['book' => $book, 'shelves' => $shelves]);
     }
     
-    public function newBook(Book $book)
+    public function newBook(Book $book,)
     {
         return view('shelves.newBook');
     }
     
-    public function add(Request $request, Book $book)
+    public function add(Request $request, Book $book, Tag $tag)
     {
         $input = $request['book'];
         $book->fill($input)->save();

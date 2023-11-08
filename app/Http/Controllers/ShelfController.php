@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shelf;
-
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShelfController extends Controller
 {
-    public function index(Shelf $shelf)
+    public function index(Shelf $shelf, Request $request, User $user)
     {
-        return view('shelves.index')->with(['shelves' => $shelf->getPaginateByLimit()]); 
+        $shelves = \Auth::user()->shelves()->Paginate(2);
+     
+
+        return view('shelves.index')->with(['shelves' => $shelves]); 
         
     }
     
@@ -24,6 +28,12 @@ class ShelfController extends Controller
 {
     return view('shelves.create');
 }
+
+    public function delete(Shelf $shelf)
+    {
+        $shelf->delete;
+        return view('shelves.index');
+    }
 
     public function store(Request $request, Shelf $shelf)
 {
