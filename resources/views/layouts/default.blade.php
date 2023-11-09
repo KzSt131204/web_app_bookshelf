@@ -9,7 +9,16 @@
     <x-app-layout>
         <x-slot name="header">
         </x-slot>
-        
+        <style>
+            body{ 
+                font-size:20pt; text-align: center; 
+                
+                margin:0 auto; width:80%; background-color:#f5deb3;
+            }
+            h2{
+                font-size:18pt;
+            }
+        </style>
    <body>
        @yield('content')
    </body>
