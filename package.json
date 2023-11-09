@@ -4,10 +4,11 @@
         "dev": "vite",
         "build": "vite build",
         "engines": {
-            "node": "16.20.2"
+            "node": "16.20.2",
+            "npm": "9.8.1"
         }
         "heroku-postbuild": "npm run build"
-    },
+    }
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
         "alpinejs": "^3.4.2",
