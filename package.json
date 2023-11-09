@@ -3,12 +3,14 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "engines": {
+         "heroku-postbuild": "npm run build"
+    },
+    
+    "engines": {
             "node": "16.20.2",
-            "npm": "9.8.1"
-        }
-        "heroku-postbuild": "npm run build"
-    }
+            "npm": "10.2.3"
+        },
+        
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
         "alpinejs": "^3.4.2",
