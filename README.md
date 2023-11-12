@@ -67,5 +67,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## About this app
 
-色々調べながら初めて作ったアプリです。
+色々調べたり手伝ってもらったりしながら初めて作ったアプリです。
 現実で散らかりがちな本棚の中身を少しでも確認・管理をしやすくするために作成しました。
