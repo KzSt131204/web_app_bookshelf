@@ -44,4 +44,5 @@
             </x-primary-button>
         </div>
     </form>
+    <a href= "{{ route('register')}}">新規登録</a>
 </x-guest-layout>
