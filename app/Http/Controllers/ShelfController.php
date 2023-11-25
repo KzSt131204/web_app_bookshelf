@@ -11,7 +11,7 @@ class ShelfController extends Controller
 {
     public function index(Shelf $shelf, Request $request, User $user)
     {
-        $shelves = \Auth::user()->shelves()->Paginate(2);
+        $shelves = \Auth::user()->shelves()->Paginate(5);
      
 
         return view('shelves.index')->with(['shelves' => $shelves]); 

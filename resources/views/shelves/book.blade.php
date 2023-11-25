@@ -24,6 +24,10 @@
 
 </div>
 
+ <div class='paginate'>
+        {{ $books->appends(['keyword' => $keyword ?? '' ])->links() }}
+    </div>
+
 <div class=newBook>
     <h2>お探しの本がない場合は
     <a href= '/books/new'>コチラ</a>

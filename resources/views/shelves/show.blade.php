@@ -1,17 +1,30 @@
 @extends('layouts.default')
 @section('content')
 
-<div class='books'>
+
  
-  <table>
+  <table align="center" border="2">
+      <thead>
     <tr>
-      <th>タイトル</th> <th>著者</th> <th>出版社</th>
+      <th>タイトル</th> <th>著者</th> <th>出版社</th> <th> </th>
     </tr>
+  </thead>
   
+  <tbody>
   @forelse($shelf->books as $book)
  
     <tr>
-      <th>{{ $book->title }}</th> <th>{{ $book->author }}</th> <th>{{ $book->publisher}}</th>
+      <td>{{ $book->title }}</td> <td>{{ $book->author }}</td> <td>{{ $book->publisher}}</td>　
+      
+      <td>
+
+              <button type="button" class="btn btn-danger"　oneclick="deleteBook">削除</button>
+
+          
+      </td>
+      
+      
+    
     </tr>
   
  @empty
@@ -19,18 +32,19 @@
  
  @endforelse
  
-  </table>
+    </tbody>
+ </table>
   
-</div>
+
 
 <form action="/shelf/{{ $shelf->id }}" id="form_{{ $shelf->id }}" method="post">
     @csrf
     @method('DELETE')
-    <button type="button" onclick="deleteShelf({{ $shelf->id }})">delete</button> 
+    <button type="button" class="btn btn-danger" onclick="deleteShelf({{ $shelf->id }})">本棚の消去</button> 
 </form>
 
 <script>
-    function deletePost(id) {
+    function deleteShelf(id) {
         'use strict'
 
         if (confirm('削除すると復元できません。\n本当に削除しますか？')) {

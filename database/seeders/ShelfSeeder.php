@@ -14,7 +14,7 @@ class ShelfSeeder extends Seeder
     public function run()
     {
          DB::table('shelves')->insert([
-                'name' => 'テスト',
+                'name' => 'テスト1',
                 'user_id' => '1',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
@@ -26,5 +26,12 @@ class ShelfSeeder extends Seeder
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
         ]);
+        
+         DB::table('shelves')->insert([
+                'name' => 'ウィッシュリスト',
+                'user_id' => '1',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+        ]);        
     }
 }

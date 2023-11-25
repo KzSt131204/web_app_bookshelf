@@ -26,8 +26,8 @@ class BookController extends Controller
                 ->orWhere('publisher', 'LIKE', "%{$keyword}%");
         }        
           $books = $query->get();
-          
-          return view('shelves.book', compact('books', 'keyword')); 
+          $books = $query->paginate(5);
+          return view('shelves.book', compact('books', 'keyword'));
         
     }        
     

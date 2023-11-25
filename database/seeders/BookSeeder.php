@@ -16,10 +16,70 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-          DB::table('books')->insert([
-                'title' => 'タイトルA',
-                'author' => 'test1',
-                'publisher' => 'testa',
+        DB::table('books')->insert([
+                'title' => 'ワンピース(1)',
+                'author' => '尾田栄一郎',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                
+        
+        ]);
+        
+        DB::table('books')->insert([
+                'title' => 'ワンピース(2)',
+                'author' => '尾田栄一郎',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                
+        
+        ]);
+        
+        DB::table('books')->insert([
+                'title' => 'ワンピース(3)',
+                'author' => '尾田栄一郎',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                
+        
+        ]);
+        
+        DB::table('books')->insert([
+                'title' => 'ワンピース(4)',
+                'author' => '尾田栄一郎',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                
+        
+        ]);
+        
+        DB::table('books')->insert([
+                'title' => 'ワンピース(5)',
+                'author' => '尾田栄一郎',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                
+        
+        ]);
+        
+        DB::table('books')->insert([
+                'title' => 'ワンピース(6)',
+                'author' => '尾田栄一郎',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                
+        
+        ]);
+        
+        DB::table('books')->insert([
+                'title' => 'ワンピース(7)',
+                'author' => '尾田栄一郎',
+                'publisher' => '集英社',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 
@@ -27,34 +87,115 @@ class BookSeeder extends Seeder
         ]);
         
          DB::table('books')->insert([
-                'title' => 'タイトルB',
-                'author' => 'test2',
-                'publisher' => 'testb',
+                'title' => '人間失格',
+                'author' => '太宰治',
+                'publisher' => '角川文庫',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 ]);
                 
         DB::table('books')->insert([
-                'title' => 'タイトルC',
-                'author' => 'test3',
-                'publisher' => 'testc',
+                'title' => 'はらぺこあおむし',
+                'author' => 'レイック=カール',
+                'publisher' => '偕成社',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ]);
-             DB::table('books')->insert([
-                'title' => 'テストD',
-                'author' => 'test4',
-                'publisher' => 'testd',
+            
+        DB::table('books')->insert([
+                'title' => 'ボボボーボ・ボーボボ(1)',
+                'author' => '澤井啓夫',
+                'publisher' => '集英社',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 ]);
                 
-            DB::table('books')->insert([
-                'title' => 'サンプル',
-                'author' => 'サンプル1',
-                'publisher' => 'サンプルA',
+        DB::table('books')->insert([
+                'title' => 'ボボボーボ・ボーボボ(2)',
+                'author' => '澤井啓夫',
+                'publisher' => '集英社',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
                 ]);
+                
+        DB::table('books')->insert([
+                'title' => 'ボボボーボ・ボーボボ(3)',
+                'author' => '澤井啓夫',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);
+                                                
+        DB::table('books')->insert([
+                'title' => '真説ボボボーボ・ボーボボ(1)',
+                'author' => '澤井啓夫',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);
+                
+        DB::table('books')->insert([
+                'title' => '魔人探偵脳嚙ネウロ(1)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);
+ 
+         DB::table('books')->insert([
+                'title' => '魔人探偵脳嚙ネウロ(2)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);
+                
+        DB::table('books')->insert([
+                'title' => '魔人探偵脳嚙ネウロ(3)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);                
+                
+        DB::table('books')->insert([
+                'title' => '暗殺教室(1)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);    
+                
+        DB::table('books')->insert([
+                'title' => '暗殺教室(2)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);           
+                
+        DB::table('books')->insert([
+                'title' => '暗殺教室(3)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);                   
+
+        DB::table('books')->insert([
+                'title' => '暗殺教室(4)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);                   
+                
+        DB::table('books')->insert([
+                'title' => '逃げ上手の若君(1)',
+                'author' => '松井優征',
+                'publisher' => '集英社',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ]);                    
     }
 }
