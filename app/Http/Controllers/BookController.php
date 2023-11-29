@@ -10,6 +10,7 @@ use App\Models\Tag;
 
 use Illuminate\Http\Request;
 
+
 class BookController extends Controller
 {
      public function book(Book $book, Request $request)
@@ -56,7 +57,15 @@ class BookController extends Controller
     
     public function uproad(Request $request, Book $book, Shelf $shelf)
 {
-    
+ $validated = $request->validate([
+        'book_id' => 'required',
+        'shelf_id' => 'required|unique:book_id,shelf_id'
+    ]);
+    if ($validator->fails()) {
+            return redirect('/duplication')
+                ->withInput()
+                ->withErrors($validator);
+    }
     $input_shelves = $request['shelf'];  
     $book->shelves()->attach($input_shelves); 
     return redirect('/books');

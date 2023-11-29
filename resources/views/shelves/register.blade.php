@@ -13,7 +13,7 @@
             <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
         @endforeach
         
-        <input type="submit" value="登録"/>
+        <input type="submit" value="登録"　unique/>
     </form>
  <div class="footer">
             <a href="/">戻る</a>
