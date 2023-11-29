@@ -61,11 +61,7 @@ class BookController extends Controller
         'book_id' => 'required',
         'shelf_id' => 'required|unique:book_id,shelf_id'
     ]);
-    if ($validator->fails()) {
-            return redirect('/duplication')
-                ->withInput()
-                ->withErrors($validator);
-    }
+  
     $input_shelves = $request['shelf'];  
     $book->shelves()->attach($input_shelves); 
     return redirect('/books');
