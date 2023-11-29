@@ -32,7 +32,8 @@ class ShelfController extends Controller
     public function delete(Shelf $shelf)
     {
         $shelf->delete;
-        return view('shelves.index');
+        
+        return redirect('/');
     }
 
     public function store(Request $request, Shelf $shelf)

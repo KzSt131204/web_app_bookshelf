@@ -20,7 +20,7 @@ Route::controller(ShelfController::class)->middleware(['auth'])->group(function(
     Route::post('/shelves', 'store')->name('store');
     Route::get('/shelves/create', 'create')->name('create');
     Route::get('/shelves/{shelf}', 'show')->name('show');
-    Route::delete('/shelf/{shelf}', 'delete')->name('delete');
+    Route::delete('/shelves/{shelf}', 'delete')->name('delete');
 });
 
 Route::controller(BookController::class)->middleware(['auth'])->group(function(){

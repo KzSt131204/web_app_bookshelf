@@ -29,5 +29,9 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('shelves');
+        
+        Schema::table('texts', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };
