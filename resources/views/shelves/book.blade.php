@@ -9,19 +9,23 @@
 </div>
 
 <div class='books'>
-    
+
+         <table align="center"  border="2">
+             
 @forelse($books as $book)
     <div class='book'>
-        <h2 class=title>
+       
+        <tr>
             <a href="/books/{{ $book->id}}/detail">{{ $book->title }}</a>
-        </h2>
+        </tr>
+       
     </div>
     
 @empty
     <h2>なにもないよ</h2>
     
 @endforelse
-
+ </table>
 </div>
 
  <div class='paginate'>

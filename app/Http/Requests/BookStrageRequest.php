@@ -11,10 +11,6 @@ class BookStrageRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return true;
-    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -24,12 +20,11 @@ class BookStrageRequest extends FormRequest
     public function rules()
     {
         return [
+            'book_shelf.book_id' => 'required',
+        'book_shelf.shelf.shelf_id' => 'required|unique:book_id,shelf_id',
             
-            shelf_id =>  [
-                Rule::unique('book_shelf')->ignore($this->input('id'))->where(function($query) {
-                $query->where('book_id', $this->input('book_id'));
-            }),
-        ],
+            
+        
         ];
     }
 }

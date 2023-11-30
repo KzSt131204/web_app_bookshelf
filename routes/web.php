@@ -28,7 +28,7 @@ Route::controller(BookController::class)->middleware(['auth'])->group(function()
     Route::get('/books/new', 'newBook')->name('newBook');
     Route::post('/books', 'add')->name('add');
     Route::post('/books/{book}', 'uproad')->name('uproad');
-    Route::get('/duplication','duplication')->name('duplication');
+    Route::get('/books/{book}/duplication','duplication')->name('duplication');
     Route::get('/books/{book}/detail', 'detail')->name('detail');
     Route::get('/books/register/{book}', 'register')->name('register');
 

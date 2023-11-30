@@ -58,8 +58,8 @@ class BookController extends Controller
     public function uproad(Request $request, Book $book, Shelf $shelf)
 {
  $validated = $request->validate([
-        'book_id' => 'required',
-        'shelf_id' => 'required|unique:book_id,shelf_id'
+    
+        'shelf_id' => 'unique:book_id,shelf_id'
     ]);
   
     $input_shelves = $request['shelf'];  

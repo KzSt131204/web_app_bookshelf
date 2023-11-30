@@ -31,7 +31,7 @@ class ShelfController extends Controller
 
     public function delete(Shelf $shelf)
     {
-        $shelf->delete;
+        $shelf->delete();
         
         return redirect('/');
     }

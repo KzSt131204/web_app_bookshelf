@@ -37,9 +37,25 @@
     </tbody>
  </table>
  
+                        
+<form action="/shelves/{{ $shelf->id }}" id="form_{{ $shelf->id }}" method="post">
+    @csrf
+    @method('DELETE')
+    <button type="button" class="btn btn-danger" onclick="deleteShelf({{ $shelf->id }})">本棚の消去</button> 
 
 
  <div class="footer">
             <a href="/">戻る</a>
         </div>
+        
+        <script>
+    function deleteShelf(id) {
+        'use strict'
+
+        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+        }
+    }
+    </script>
+        
 @endsection
