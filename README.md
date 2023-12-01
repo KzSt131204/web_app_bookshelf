@@ -13,6 +13,6 @@
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## About this app
-本の登録や管理、登録したい本の検索・ない場合は本のデータの追加が行えるアプリです。
+本の登録や管理、登録したい本情報の検索・ない場合は本のデータの追加が行えるアプリです。
 色々調べたり手伝ってもらったりしながら初めて作ったアプリです。
 現実で散らかりがちな本棚の中身を少しでも確認・管理をしやすくするために作成しました。
