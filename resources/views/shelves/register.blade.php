@@ -1,6 +1,22 @@
 @extends('layouts.default')
 
+@if( session('flash') )
+    @foreach (session('flash') as $key => $item)
+      <div class="alert alert-{{ $key }}">{{ session('flash.' . $key) }}</div>
+    @endforeach
+  @endif
+  
 @section('content')
+
+        <div>  
+    @if ($errors->any())  
+        <ul>  
+            @foreach ($errors->all() as $error)  
+                <li>{{ $error }}</li>  
+            @endforeach  
+        </ul>  
+    @endif  
+</div>
 
 <form action="/books/{{ $book->id }}" method="POST">
     @csrf
@@ -13,14 +29,16 @@
             <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
         @endforeach
         
+</div>
+
         <input type="submit" value="登録"/>
 
-<p class="register__error" style="color:red">{{ $errors->first('post.body') }}</p>
+
 
     </form>
     
     
  <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/books">戻る</a>
         </div>
 @endsection

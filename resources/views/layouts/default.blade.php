@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+
         <meta charset="utf-8">
         <title>My_bookshelf</title>
         <!-- Fonts -->
@@ -28,7 +29,8 @@
             }
             
         </style>
-   <body>
+ <body>
        @yield('content')
+  
    </body>
 </x-app-layout>

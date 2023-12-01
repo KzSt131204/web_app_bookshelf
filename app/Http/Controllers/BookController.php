@@ -10,6 +10,10 @@ use App\Models\Tag;
 
 use Illuminate\Http\Request;
 
+//use Illuminate\Http\Requests\BookStrageRequest;
+
+use Illuminate\Validation\Rule;
+
 
 class BookController extends Controller
 {
@@ -55,15 +59,28 @@ class BookController extends Controller
         return redirect('/books');
     }
     
-    public function uproad(Request $request, Book $book, Shelf $shelf)
+   public function uproad(Request $request, Book $book, Shelf $shelf)
 {
- $validated = $request->validate([
-    
-        'shelf_id' => 'unique:book_id,shelf_id'
-    ]);
-  
+      $validator = \Validator::make($request->all(), [
+    'shelf_id' => 'required',
+    'book_id' => [
+      'required',
+      Rule::unique('book_shelf')->where(function($query) use($request) {
+        $query->where('book_id', $request->input('book_id'));
+      })]]);
+
+  if ($validator->fails()) {
+        return view('shelves.duplication');
+  };
     $input_shelves = $request['shelf'];  
     $book->shelves()->attach($input_shelves); 
+    return redirect('/books');
+}
+
+public function eject(Request $request, Book $book, Shelf $shelf)
+{
+    $input_shelves = $request['shelf'];  
+    $book->shelves()->dettach($input_shelves); 
     return redirect('/books');
 }
 

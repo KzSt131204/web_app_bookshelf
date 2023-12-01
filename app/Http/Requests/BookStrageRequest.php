@@ -6,17 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class BookStrageRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
     public function rules()
     {
         return [
@@ -27,4 +17,12 @@ class BookStrageRequest extends FormRequest
         
         ];
     }
+    
+    public function messages(){
+  return [
+    'bookid.required' => 'これが表示されることはないでしょう',
+    'shelf_id.required' => 'これが表示されることはないでしょう',
+    'shelf_id.unique' => '既に登録されています'
+  ];
+}
 }

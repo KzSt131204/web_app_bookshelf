@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ShelfController;
 use App\Http\Controllers\ProfileController;
@@ -28,11 +29,16 @@ Route::controller(BookController::class)->middleware(['auth'])->group(function()
     Route::get('/books/new', 'newBook')->name('newBook');
     Route::post('/books', 'add')->name('add');
     Route::post('/books/{book}', 'uproad')->name('uproad');
-    Route::get('/books/{book}/duplication','duplication')->name('duplication');
     Route::get('/books/{book}/detail', 'detail')->name('detail');
     Route::get('/books/register/{book}', 'register')->name('register');
+    Route::get('/books/register/{book}/duplication','duplication')->name('duplication');
 
 });
+
+/*Route::controller(FormController::class)->middleware(['auth'])->group(function(){
+
+    Route::post('/books/{book}', 'uproad')->name('uproad');
+});*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

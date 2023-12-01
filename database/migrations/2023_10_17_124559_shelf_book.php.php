@@ -17,7 +17,7 @@ return new class extends Migration
         
         $table->foreignId('book_id')->constrained('books');   
         $table->foreignId('shelf_id')->constrained('shelves');    
-        $table->primary(['book_id', 'shelf_id']);  
+        $table->unique(['book_id', 'shelf_id']);  
     });
     }
 
