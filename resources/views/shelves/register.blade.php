@@ -1,22 +1,8 @@
 @extends('layouts.default')
 
-@if( session('flash') )
-    @foreach (session('flash') as $key => $item)
-      <div class="alert alert-{{ $key }}">{{ session('flash.' . $key) }}</div>
-    @endforeach
-  @endif
+
   
 @section('content')
-
-        <div>  
-    @if ($errors->any())  
-        <ul>  
-            @foreach ($errors->all() as $error)  
-                <li>{{ $error }}</li>  
-            @endforeach  
-        </ul>  
-    @endif  
-</div>
 
 <form action="/books/{{ $book->id }}" method="POST">
     @csrf
