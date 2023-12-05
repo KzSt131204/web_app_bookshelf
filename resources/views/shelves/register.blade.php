@@ -10,14 +10,21 @@
         <h2>
            {{ $book->title }}を登録する本棚を選択してください
         </h2>
-        <select name="shelf[shelf_id]">
-        @foreach($shelves as $shelf)
-            <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
-        @endforeach
         
+<input type="hidden" name="book_id" value="{{ $book->id }}">
+
+<select name="shelf" id="shelf">
+    @forelse($userWithShelves->shelves as $shelf)
+        <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
+    @empty
+        <option value="empty">本棚がありません</option>
+    @endforelse
+</select>
+
+     
 </div>
 
-        <input type="submit" value="登録"/>
+        <button type="submit" class="btn btn-primary">登録</button>
 
 
 

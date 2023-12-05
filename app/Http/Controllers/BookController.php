@@ -6,11 +6,13 @@ use App\Models\Book;
 
 use App\Models\Shelf;
 
+use App\Models\User;
+
 use App\Models\Tag;
 
 use Illuminate\Http\Request;
 
-//use Illuminate\Http\Requests\BookStrageRequest;
+use Illuminate\Database\QueryException;
 
 use Illuminate\Validation\Rule;
 
@@ -41,11 +43,16 @@ class BookController extends Controller
             return view('shelves.detail')->with(['book' => $book]);
     }
     
-    public function register(Book $book, Shelf $shelf)
-    {
-        $shelves = $shelf->get();
-        return view('shelves.register')->with(['book' => $book, 'shelves' => $shelves]);
-    }
+public function register(Book $book)
+{
+    // ログインしているユーザーの情報を取得
+    $user = \Auth::user();
+
+    // ユーザーとその本棚を取得
+    $userWithShelves = User::with('shelves')->find($user->id);
+
+    return view('shelves.register', compact('userWithShelves', 'book'));
+}
     
     public function newBook(Book $book,)
     {
@@ -59,22 +66,32 @@ class BookController extends Controller
         return redirect('/books');
     }
     
-   public function uproad(Request $request, Book $book, Shelf $shelf)
+public function uproad(Request $request, Book $book, Shelf $shelf)
 {
-      $validator = \Validator::make($request->all(), [
-    'shelf_id' => 'required',
+    // バリデーションルールの定義
+$validator = \Validator::make($request->all(), [
+    'shelf' => 'required',
     'book_id' => [
-      'required',
-      Rule::unique('book_shelf')->where(function($query) use($request) {
-        $query->where('book_id', $request->input('book_id'));
-      })]]);
+        'required',
+        Rule::unique('book_shelf')->where(function ($query) use ($request) {
+            return $query->where('shelf_id', $request->input('shelf'));
+        }),
+    ],
+]);
 
-  if ($validator->fails()) {
-        return view('shelves.duplication');
-  };
-    $input_shelves = $request['shelf'];  
-    $book->shelves()->attach($input_shelves); 
-    return redirect('/books');
+// バリデーションが失敗した場合
+if ($validator->fails()) {
+    return view('shelves.duplication');
+}
+
+// リクエストから shelf データを取得
+$input_shelves = $request->input('shelf');
+
+// $book->shelves() が BelongsToMany リレーションである場合
+// attach() メソッドを使用して中間テーブルにデータを挿入
+$book->shelves()->attach($input_shelves);
+
+return redirect('/books');
 }
 
 public function eject(Request $request, Book $book, Shelf $shelf)
