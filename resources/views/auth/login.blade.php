@@ -44,5 +44,10 @@
             </x-primary-button>
         </div>
     </form>
+    
+    <div style="display: flex; justify-content: space-between; width: 200px;">
     <a href= "{{ route('register')}}">新規登録</a>
+    
+    <a href= "{{ route('guest.login')}}">ゲストログイン</a>
+    </div>
 </x-guest-layout>
