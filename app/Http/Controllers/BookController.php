@@ -32,7 +32,7 @@ class BookController extends Controller
                 ->orWhere('author', 'LIKE', "%{$keyword}%")
                 ->orWhere('publisher', 'LIKE', "%{$keyword}%");
         }        
-          $books = $query->get();
+         
           $books = $query->paginate(5);
           return view('shelves.book', compact('books', 'keyword'));
         
@@ -54,6 +54,18 @@ public function register(Book $book)
     return view('shelves.register', compact('userWithShelves', 'book'));
 }
     
+        public function __construct()
+    {
+        // someRestrictedFunction メソッドにゲストユーザーのみアクセス可能な制限を追加
+        $this->middleware('guest')->only('someRestrictedFunction');
+    }
+    
+    public function someRestrictedFunction()
+    {
+
+        return view('shelves.newBook');
+    }
+    
     public function newBook(Book $book,)
     {
         return view('shelves.newBook');
@@ -66,7 +78,7 @@ public function register(Book $book)
         return redirect('/books');
     }
     
-public function uproad(Request $request, Book $book, Shelf $shelf)
+public function upload(Request $request, Book $book, Shelf $shelf)
 {
     // バリデーションルールの定義
 $validator = \Validator::make($request->all(), [

@@ -32,11 +32,16 @@
         {{ $books->appends(['keyword' => $keyword ?? '' ])->links() }}
     </div>
 
+@if (Auth::check() && Auth::user()->is_guest)
 <div class=newBook>
     <h2>お探しの本がない場合は
     <a href= '/books/new'><font color="#00BFFF">コチラ</font></a>
     から登録をお願いします
     </h2>
 </div>
+@else
+    
+@endif
+
 
 @endsection
