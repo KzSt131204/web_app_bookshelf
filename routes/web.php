@@ -21,7 +21,7 @@ Route::get('/guest-login', [GuestLoginController::class, 'login'])->name('guest.
 
 
 Route::controller(ShelfController::class)->middleware(['auth'])->group(function(){
-    Route::get('/', 'index')->name('index');
+    Route::get('/shelf', 'index')->name('index');
     Route::post('/shelves', 'store')->name('store');
     Route::get('/shelves/create', 'create')->name('create');
     Route::get('/shelves/{shelf}', 'show')->name('show');
